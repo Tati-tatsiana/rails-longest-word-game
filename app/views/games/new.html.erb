@@ -1,0 +1,16 @@
+<h1> oh non </h1>
+
+<ol>
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ol>
+
+<h1> click here </h1>
+
+<form action="/score" method="post">
+  <input type="text" name="letter" placeholder="what is the longest word?">
+  <input type="submit" value="lol">
+  <input type="hidden" name="letters" value="<%= @letters.join %>">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
